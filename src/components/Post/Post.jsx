@@ -1,20 +1,30 @@
+import Avatar from '../Avatar/Avatar';
 import Comment from '../Comment/Comment';
 import styles from './Post.module.css';
 
-export default function Post () {
+export default function Post (props) {
+
+    const PublishedDateFormated = new Intl.DateTimeFormat('pt-BR', {
+        day: '2-digit',
+        month: 'long',
+        hour: '2-digit',
+        minute: '2-digit'
+    }).format(props.publishedAt)
+
     return (
         <article className={styles.post}>
             <header>
                 <div className={styles.author}>
-                    <img className={styles.avatar} src="https://github.com/nkbreno33.png" alt=""/>
+                    <Avatar src={props.author.avatarUrl} alt=""/>
                     <div className={styles.authorInfo}>
-                        <strong>Nicholas Breno</strong>
-                        <span>Web Developer</span>
+                        <strong>{props.author.name}</strong>
+                        <span>{props.author.role}</span>
                     </div>
                 </div>
 
                 <time 
-                    title='16 de novembro ás 16:00' dateTime='2023-11-16 08:13:30'>Publicado há 1 hora
+                    title='16 de novembro ás 16:00' dateTime='2023-11-16 08:13:30'>
+                        {PublishedDateFormated}
                 </time>
             </header>
 
@@ -47,6 +57,9 @@ export default function Post () {
 
             <div className={styles.commentList}>
                 <Comment />
+                <Comment />
+                <Comment />
+
             </div>
         </article>
     )
