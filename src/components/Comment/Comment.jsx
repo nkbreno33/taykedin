@@ -11,7 +11,7 @@ export default function Comment (props) {
                 <div className={styles.commentContent}>
                     <header>
                         <div className={styles.authorAndTime}>
-                            <strong>Tim bernes Lee</strong>
+                            <strong>Rocketseat</strong>
                             <time title='16 de novembro ás 17:00' dateTime='2023-11-16 17:30:10'>Cerca de 1h atrás</time>
                         </div>
 

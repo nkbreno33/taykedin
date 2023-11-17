@@ -18,8 +18,8 @@ const post = [
       { type: 'paragraph', content: 'Boa tarde pessoal',},
       { type: 'paragraph', content: 'Gostaria de compartilhar com vocês o início do meu projeto de portfólio, que fiz a partir de um curso promovido pela Rocketseat e ministrado pelo Mayk Brito, onde eu fiz alterações na pagina inicial, adicionei a página "sobre" e a página de "projetos", em breve irei adicionar mais projetos lá e adicionar mais recursos(aceito dicas).',},
       { type: 'paragraph', content: 'Por enquanto é só, espero que gostem! 🙌 😎',},
-      { type: 'link', content: 'https://dev-links-peach.vercel.app/Site:'},
-      { type: 'link', content: '"https://abrir.link/Eo7WS">Layout do projeto inicial',}
+      { type: 'link', content: 'Deploy: https://dev-links-peach.vercel.app/'},
+      { type: 'link', content: 'Layout do projeto inicial: https://abrir.link/Eo7WS',}
     ],
     publishedAt: new Date ('2023-11-17 11:08:20'),
   },
