@@ -2,29 +2,29 @@ import Avatar from '../Avatar/Avatar';
 import Comment from '../Comment/Comment';
 import styles from './Post.module.css';
 
-export default function Post (props) {
+import { format } from 'date-fns';
+import ptBR from 'date-fns/locale/pt-BR';
 
-    const PublishedDateFormated = new Intl.DateTimeFormat('pt-BR', {
-        day: '2-digit',
-        month: 'long',
-        hour: '2-digit',
-        minute: '2-digit'
-    }).format(props.publishedAt)
+export default function Post ({ author, publishedAt }) {
+
+    const publishedDateFormated = format(publishedAt, "d 'de' LLLL 'às' HH:mm'h'", {
+        locale: ptBR,
+    })
 
     return (
         <article className={styles.post}>
             <header>
                 <div className={styles.author}>
-                    <Avatar src={props.author.avatarUrl} alt=""/>
+                    <Avatar src={author.avatarUrl} alt=""/>
                     <div className={styles.authorInfo}>
-                        <strong>{props.author.name}</strong>
-                        <span>{props.author.role}</span>
+                        <strong>{author.name}</strong>
+                        <span>{author.role}</span>
                     </div>
                 </div>
 
                 <time 
-                    title='16 de novembro ás 16:00' dateTime='2023-11-16 08:13:30'>
-                        {PublishedDateFormated}
+                    title='' dateTime='2023-11-16 08:13:30'>
+                        {publishedDateFormated}       
                 </time>
             </header>
 
